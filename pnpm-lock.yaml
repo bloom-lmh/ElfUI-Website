@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@elfui/core':
-        specifier: 0.1.0-beta.9
-        version: 0.1.0-beta.9
+        specifier: 0.1.0-beta.11
+        version: 0.1.0-beta.11
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -149,14 +149,23 @@ packages:
   '@elfui/compiler@0.1.0-beta.9':
     resolution: {integrity: sha512-JoL6/8XbRMGp/tnPm54tuFg4U8GhpAwYeml/RxAAENpKy4SYfOrn1YgxSHdLgWLMad36h9QsplgDv6SwWqn1AA==}
 
-  '@elfui/core@0.1.0-beta.9':
-    resolution: {integrity: sha512-odvZh57B2te7hIRtmACvkUteEzmeIRyF664idWVZoQ8WWymGfioUeRbdr3i58l5nHVcVN/niTndLgUfS/H/e8w==}
+  '@elfui/core@0.1.0-beta.11':
+    resolution: {integrity: sha512-6fa5swf3f6S2Y8PggEZjFTwwNnt0Ts+SQi7OyTZm4e1kQ1ZYicBj8efAnnKLM1FyrEjGy/xJUjjj1djPkYtQOg==}
+
+  '@elfui/reactivity@0.1.0-beta.11':
+    resolution: {integrity: sha512-ku/FPKwi269XXfe7uLMqgKeG8QJBS80AJuFcJfoGhxtJANpnu5yqSLVyodr4HwHLsg10XhEBa9RpGcxJEsBTHw==}
 
   '@elfui/reactivity@0.1.0-beta.9':
     resolution: {integrity: sha512-M5JANRCnxo93oiqhVJO+STwykB8zVecBwv/27LnIW9QYbxkaC1fCKiOPmI0KbcEymvHYbprYXEAi2HlZOUNH+g==}
 
+  '@elfui/runtime@0.1.0-beta.11':
+    resolution: {integrity: sha512-D3pDe92XtJakiYfuHVPe8ozuFtdNXduIV4Z4mPCf5cdhVchogMLzxAjh86RdwVkyd0nmjGzhiu94/6+QuDZGTQ==}
+
   '@elfui/runtime@0.1.0-beta.9':
     resolution: {integrity: sha512-OwXGuWZEhzGMGAn14ntmyO2gyPiditMMDeldVCluVrWUAfW527TlgWJIPy+yayGD7I9Nd12WW6pfoJqCR+Qinw==}
+
+  '@elfui/shared@0.1.0-beta.11':
+    resolution: {integrity: sha512-Gef17n+i6LkmYPA2prv22qGDIpJrWM4HPiKZiIo9sagZq5fKLebxmBCBEE8pXpWrWPiUXC5B/OBsOzo14LDyDg==}
 
   '@elfui/shared@0.1.0-beta.9':
     resolution: {integrity: sha512-k2Xr9cu6yQYOUCP8/KCsiwyWNscIXGtZxsBP96Waltmq+w57/9aVo1+LTvM1zudZ6IFVVGFMwZlbJrLrab2ZJA==}
@@ -1004,20 +1013,31 @@ snapshots:
       '@elfui/shared': 0.1.0-beta.9
       typescript: 5.9.3
 
-  '@elfui/core@0.1.0-beta.9':
+  '@elfui/core@0.1.0-beta.11':
     dependencies:
-      '@elfui/reactivity': 0.1.0-beta.9
-      '@elfui/runtime': 0.1.0-beta.9
-      '@elfui/shared': 0.1.0-beta.9
+      '@elfui/reactivity': 0.1.0-beta.11
+      '@elfui/runtime': 0.1.0-beta.11
+      '@elfui/shared': 0.1.0-beta.11
+
+  '@elfui/reactivity@0.1.0-beta.11':
+    dependencies:
+      '@elfui/shared': 0.1.0-beta.11
 
   '@elfui/reactivity@0.1.0-beta.9':
     dependencies:
       '@elfui/shared': 0.1.0-beta.9
 
+  '@elfui/runtime@0.1.0-beta.11':
+    dependencies:
+      '@elfui/reactivity': 0.1.0-beta.11
+      '@elfui/shared': 0.1.0-beta.11
+
   '@elfui/runtime@0.1.0-beta.9':
     dependencies:
       '@elfui/reactivity': 0.1.0-beta.9
       '@elfui/shared': 0.1.0-beta.9
+
+  '@elfui/shared@0.1.0-beta.11': {}
 
   '@elfui/shared@0.1.0-beta.9': {}
 
