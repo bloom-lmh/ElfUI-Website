@@ -51,7 +51,9 @@ export const Dashboard = defineHtml(`
 
 `fragment\`...\``is the anonymous form for one-off inline markup. Both forms are compile-time
 transparent fragments: they do not register a Custom Element, create a Shadow Root, or own
-independent lifecycle hooks. Keep using`defineHtml()` for a public or cross-file component.
+independent lifecycle hooks. Keep using`defineHtml()`for a public or cross-file component. For
+authoring guidance and its relationship with`v-for`, see
+[Local Template Fragments](/en/template-syntax/local-template-fragments).
 
 ## Responsive
 

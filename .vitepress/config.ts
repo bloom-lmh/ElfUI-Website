@@ -5,11 +5,16 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 
 const elfuiRoot = fileURLToPath(new URL("../../elfui", import.meta.url));
 const localPluginEntry = `${elfuiRoot}/packages/vite-plugin/dist/index.js`;
-const useLocalPackages = process.env.ELFUI_USE_LOCAL_PACKAGES !== "false" && existsSync(localPluginEntry);
+const useLocalPackages =
+  process.env.ELFUI_USE_LOCAL_PACKAGES !== "false" &&
+  existsSync(localPluginEntry);
 
 const elfuiMacroPlugin = useLocalPackages
-  ? ((await import(/* @vite-ignore */ pathToFileURL(localPluginEntry).href)) as typeof import("@elfui/vite-plugin"))
-      .elfuiMacroPlugin
+  ? (
+      (await import(
+        /* @vite-ignore */ pathToFileURL(localPluginEntry).href
+      )) as typeof import("@elfui/vite-plugin")
+    ).elfuiMacroPlugin
   : publishedElfuiMacroPlugin;
 
 const localAliases = useLocalPackages
@@ -28,7 +33,10 @@ type Sidebar = DefaultTheme.SidebarItem[];
 const playgroundUrl =
   "https://stackblitz.com/fork/github/bloom-lmh/elfui-playground?startScript=dev&title=ElfUI%20Playground";
 
-const section = (text: string, items: [string, string][]): DefaultTheme.SidebarItem => ({
+const section = (
+  text: string,
+  items: [string, string][],
+): DefaultTheme.SidebarItem => ({
   text,
   collapsed: true,
   items: items.map(([text, link]) => ({ text, link })),
@@ -45,6 +53,10 @@ const englishSidebar: Sidebar = [
     ["Overview", "/en/template-syntax/overview"],
     ["Text and Attributes", "/en/template-syntax/text-and-attributes"],
     ["Conditions and Lists", "/en/template-syntax/conditions-and-lists"],
+    [
+      "Local Template Fragments",
+      "/en/template-syntax/local-template-fragments",
+    ],
     ["Event Binding", "/en/template-syntax/event-binding"],
     ["Form Binding", "/en/template-syntax/form-binding"],
     ["Class and Style", "/en/template-syntax/class-and-style"],
@@ -162,6 +174,7 @@ const zhSidebar: Sidebar = [
     ["概览", "/zh/模板语法/概览"],
     ["文本与属性", "/zh/模板语法/文本与属性"],
     ["条件与列表", "/zh/模板语法/条件与列表"],
+    ["局部模板片段", "/zh/模板语法/局部模板片段"],
     ["事件绑定", "/zh/模板语法/事件绑定"],
     ["表单绑定", "/zh/模板语法/表单绑定"],
     ["class 与 style", "/zh/模板语法/class与style"],
@@ -304,7 +317,9 @@ const baseTheme = {
       },
     },
   },
-  socialLinks: [{ icon: "github" as const, link: "https://github.com/bloom-lmh/elfui" }],
+  socialLinks: [
+    { icon: "github" as const, link: "https://github.com/bloom-lmh/elfui" },
+  ],
   outline: { level: [2, 3] as [2, 3] },
 };
 
@@ -313,7 +328,12 @@ const englishTheme: DefaultTheme.Config = {
   nav: [
     { text: "Home", link: "/en/" },
     { text: "API", link: "/en/api/core" },
-    { text: "Playground", link: playgroundUrl, target: "_blank", rel: "noreferrer" },
+    {
+      text: "Playground",
+      link: playgroundUrl,
+      target: "_blank",
+      rel: "noreferrer",
+    },
   ],
   sidebar: englishSidebar,
   outline: { ...baseTheme.outline, label: "On this page" },
@@ -326,7 +346,12 @@ const chineseTheme: DefaultTheme.Config = {
   nav: [
     { text: "首页", link: "/zh/" },
     { text: "API", link: "/zh/API参考/elfui" },
-    { text: "演练场", link: playgroundUrl, target: "_blank", rel: "noreferrer" },
+    {
+      text: "演练场",
+      link: playgroundUrl,
+      target: "_blank",
+      rel: "noreferrer",
+    },
   ],
   sidebar: zhSidebar,
   outline: { ...baseTheme.outline, label: "本页目录" },
@@ -351,8 +376,18 @@ export default defineConfig({
   },
   locales: {
     root: { lang: "en" },
-    en: { label: "English", lang: "en", link: "/en/", themeConfig: englishTheme },
-    zh: { label: "简体中文", lang: "zh-CN", link: "/zh/", themeConfig: chineseTheme },
+    en: {
+      label: "English",
+      lang: "en",
+      link: "/en/",
+      themeConfig: englishTheme,
+    },
+    zh: {
+      label: "简体中文",
+      lang: "zh-CN",
+      link: "/zh/",
+      themeConfig: chineseTheme,
+    },
   },
   vite: {
     server: {

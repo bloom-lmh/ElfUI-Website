@@ -47,7 +47,7 @@ export const Dashboard = defineHtml(`
 `);
 ```
 
-`fragment\`...\``是一次性匿名片段。两种片段都会在编译期透明展开，不注册 Custom Element、不创建 Shadow Root，也不拥有独立生命周期。需要公开、跨文件或拥有独立生命周期的模板时，继续使用`defineHtml()`。
+`fragment\`...\``是一次性匿名片段。两种片段都会在编译期透明展开，不注册 Custom Element、不创建 Shadow Root，也不拥有独立生命周期。需要公开、跨文件或拥有独立生命周期的模板时，继续使用`defineHtml()`。写法选择以及它与 `v-for` 的关系参见[局部模板片段](/zh/模板语法/局部模板片段)。
 
 ## 响应式
 

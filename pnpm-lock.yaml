@@ -144,25 +144,25 @@ packages:
         optional: true
 
   '@elfui/compiler-template@0.1.0-beta.12':
-    resolution: {integrity: sha512-jh1iTrHo9+9FTHCNDh6q4nkNPObJ3BBpwcDtfzKeccQhHgpFZQANr8DzoZKLwMfZu2kcf8AL17nDwiH32QeDyQ==}
+    resolution: {integrity: sha512-P6NXmihNkbtI7rMFS4Yuin8qmeI4KszaKri1734eIUCibazZv+9JRqIhOYOgjQ8wTjXGQcB3GkHV8CNofLWmwg==}
 
   '@elfui/compiler@0.1.0-beta.12':
-    resolution: {integrity: sha512-f3WS60HgX/KCSufXH48TK58IJwZyFaQZuiTgObY7cVzJzEGRHa3ZrvyzIMaA7lPNn70wT23teLfiDRFOJjihjQ==}
+    resolution: {integrity: sha512-htw7xsRVvqmRmbypTpQaxO2qv2bbsY5dy07JNYikhBew+zzmuC8Xuw87cmFW6hXpyMVXTt0wviGvDjn+Q2yEHQ==}
 
   '@elfui/core@0.1.0-beta.12':
-    resolution: {integrity: sha512-6fa5swf3f6S2Y8PggEZjFTwwNnt0Ts+SQi7OyTZm4e1kQ1ZYicBj8efAnnKLM1FyrEjGy/xJUjjj1djPkYtQOg==}
+    resolution: {integrity: sha512-FIywBPCUoCCtcSbxmd0v2jiRLaQZsOY6OAaFhdg53xqIuiX++eLGxvKea1QGouaJzJUnbwsfimbhgxe5epS56g==}
 
   '@elfui/reactivity@0.1.0-beta.12':
-    resolution: {integrity: sha512-ku/FPKwi269XXfe7uLMqgKeG8QJBS80AJuFcJfoGhxtJANpnu5yqSLVyodr4HwHLsg10XhEBa9RpGcxJEsBTHw==}
+    resolution: {integrity: sha512-823TDtDQamwp6Zu14fjMshPfjZQTTKd3308W5Qz2PsO8DCif4VDDt9awuZy4e/hZvGxkEhw3XqPeTNcoAfhilQ==}
 
   '@elfui/runtime@0.1.0-beta.12':
-    resolution: {integrity: sha512-D3pDe92XtJakiYfuHVPe8ozuFtdNXduIV4Z4mPCf5cdhVchogMLzxAjh86RdwVkyd0nmjGzhiu94/6+QuDZGTQ==}
+    resolution: {integrity: sha512-r0Rn+fmOtHMwWNzyqWVmoXvhULTy982rURKLidz9vw0/1BxIr6YenVP4ujHjAHShAkesHVdnUaknSJ1Ijsfasg==}
 
   '@elfui/shared@0.1.0-beta.12':
-    resolution: {integrity: sha512-Gef17n+i6LkmYPA2prv22qGDIpJrWM4HPiKZiIo9sagZq5fKLebxmBCBEE8pXpWrWPiUXC5B/OBsOzo14LDyDg==}
+    resolution: {integrity: sha512-8Z6LHmLM1EvfBvk+Fa7s3Cz0n6HuzFzkbP8SABdh8SowHGnQ52wiebGLyN9aU44etW1Ar1DiF6BG/5K9Ho2dEA==}
 
   '@elfui/vite-plugin@0.1.0-beta.12':
-    resolution: {integrity: sha512-b2qIUfw41or9tBOfJdMRGmXSwGT4C6dfYlKZHHuHlay47R9HGo3gKvpZs6x2WEQn6w8RS84fUivxWs0AI4ycrw==}
+    resolution: {integrity: sha512-JqXqLEZKx4lD6wYijKlZ5x0mvmHUgeuQtI5gnDnELygGOX3mHsqGc49ja7fwMb/osC8Es+IzYdfnfESzwdfcwQ==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
