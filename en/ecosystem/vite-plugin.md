@@ -1,6 +1,7 @@
 ---
 title: Vite Plugin
 ---
+
 # Vite plugin
 
 ::: tip
@@ -73,6 +74,22 @@ export default defineHtml(`<button><slot></slot></button>`);
 elfuiMacroPlugin({
   strictDiagnostics: true,
   templateTypeCheck: true,
+});
+```
+
+Starting in beta.13, Vite startup checks the exact beta versions and independent compiler protocols
+of Core, Compiler, and Vite Plugin. A mismatch fails before the first template compile.
+
+Tooling can consume the unified build-only data without adding it to browser production bundles:
+
+```ts
+elfuiMacroPlugin({
+  onMetadata(metadata, id) {
+    // Metadata v2: components, Fragments, source ranges, and ownership
+  },
+  onDiagnostics(diagnostics, id) {
+    // Called on every transform; an empty array clears stale diagnostics
+  },
 });
 ```
 

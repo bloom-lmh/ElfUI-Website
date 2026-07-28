@@ -81,6 +81,9 @@ Use `const name = defineDirective(definition)` for a directive local to one macr
 
 ## Built-in combined functions
 
+The Core entry exports `useId()` for stable, document-unique IDs created during synchronous setup.
+See [Stable IDs](/en/composables/stable-ids).
+
 `provide`、`inject`、`hasInjectionContext`、`createInjectionKey`、`useScopedSlot`、`useHost`、`useRenderRoot`、`useShadowRoot`、`useAttrs`、`useAppConfig`、`useTemplateRef`、`defineExpose`、`useEventListener`、`useClickOutside`、`useEscapeKey`、`useScrollLock`、`useFocusTrap`、`useResizeObserver`、`useIntersectionObserver`、`useFormControlContext`
 
 ## Built-in rendering capabilities

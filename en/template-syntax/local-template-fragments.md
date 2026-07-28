@@ -118,7 +118,10 @@ export const Dashboard = defineHtml(`
 `);
 ```
 
-The variable name becomes the local template tag, and tag attributes form a readonly props object. Prefer a PascalCase name so fragments remain visually distinct from native HTML elements.
+The variable name becomes the local template tag, and tag attributes form a readonly props view.
+`:prop` and `v-bind` read outer reactive state lazily: updating a parent Ref or replacing the bound
+object updates only the affected DOM bindings without recreating the Fragment nodes. Prefer a
+PascalCase name so fragments remain visually distinct from native HTML elements.
 
 ## It is not an independent component
 

@@ -36,6 +36,12 @@ if (!result.valid) form.report();
 
 `setValue()` synchronizes the form value, `validate()` returns the verification result, and `report()` calls the browser's native verification prompt. The component should also synchronize public props such as disabled, required, name, etc. to the actual input elements to ensure that the keyboard and assistive technology behave consistently.
 
+The Runtime bridges the native `formResetCallback`, `formDisabledCallback`, and
+`formStateRestoreCallback` callbacks. Form reset, disabled fieldsets, and browser state restoration
+therefore update the same controller. `form.disabled` exposes the current disabled state.
+`setDisabled()` and `restore()` are platform bridges that application code normally does not call
+directly.
+
 ## reset
 
 ```ts

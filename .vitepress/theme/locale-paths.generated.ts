@@ -86,6 +86,8 @@ export const localePathMap = {
   "/zh/内置组合式函数/概览": "/en/composables/overview",
   "/en/composables/host-and-root": "/zh/内置组合式函数/Host与根节点",
   "/zh/内置组合式函数/Host与根节点": "/en/composables/host-and-root",
+  "/en/composables/stable-ids": "/zh/内置组合式函数/稳定ID",
+  "/zh/内置组合式函数/稳定ID": "/en/composables/stable-ids",
   "/en/composables/template-refs": "/zh/内置组合式函数/模板引用",
   "/zh/内置组合式函数/模板引用": "/en/composables/template-refs",
   "/en/composables/dom-events": "/zh/内置组合式函数/DOM事件",

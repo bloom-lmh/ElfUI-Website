@@ -105,6 +105,7 @@ const englishSidebar: Sidebar = [
   section("Built-in Composables", [
     ["Overview", "/en/composables/overview"],
     ["Host and Root Node", "/en/composables/host-and-root"],
+    ["Stable IDs", "/en/composables/stable-ids"],
     ["Template Refs", "/en/composables/template-refs"],
     ["DOM Events", "/en/composables/dom-events"],
     ["Observers", "/en/composables/observers"],
@@ -224,6 +225,7 @@ const zhSidebar: Sidebar = [
   section("内置组合式函数", [
     ["概览", "/zh/内置组合式函数/概览"],
     ["Host 与根节点", "/zh/内置组合式函数/Host与根节点"],
+    ["稳定 ID", "/zh/内置组合式函数/稳定ID"],
     ["模板引用", "/zh/内置组合式函数/模板引用"],
     ["DOM 事件", "/zh/内置组合式函数/DOM事件"],
     ["观察器", "/zh/内置组合式函数/观察器"],

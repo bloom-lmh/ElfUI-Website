@@ -77,6 +77,21 @@ elfuiMacroPlugin({
 });
 ```
 
+beta.13 起，插件会在 Vite 启动阶段检查 Core、Compiler 与 Vite Plugin 的精确 beta 版本和独立编译协议，错配会在首次模板编译前失败。
+
+工具链可以通过构建期回调读取统一数据；这些数据不会进入浏览器生产包：
+
+```ts
+elfuiMacroPlugin({
+  onMetadata(metadata, id) {
+    // Metadata v2：组件、Fragment、源码范围和归属
+  },
+  onDiagnostics(diagnostics, id) {
+    // 同一文件每次 transform 都会回调，空数组表示清除旧诊断
+  },
+});
+```
+
 ::: tip
 组件库建议开启；普通应用可以先使用默认配置。
 :::

@@ -11,6 +11,26 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.13 — 2026-07-28
+
+- Core, Compiler, and Vite Plugin now expose an independent compiler protocol and perform an exact
+  beta-version check during Vite startup, before template compilation.
+- Vite Plugin adds build-only `onMetadata` and `onDiagnostics` hooks for Language Tools, DevTools,
+  and documentation generators without shipping the data in production bundles.
+- `MacroComponentMetadata` moves to schema v2 with structured component data, Fragment
+  dependencies/ownership/identity, source ranges, and diagnostic summaries while retaining a v1
+  adapter.
+- Fragment cycles are diagnosed at build time, and tools can identify the index-identity boundary
+  of anonymous `array.map()` fragments.
+- Fixed beta.12 named Fragment bindings capturing only their initial values. `:prop` and replaced
+  `v-bind` objects now update existing DOM bindings without recreating the Fragment.
+- Added `useId()` with stable client-side identity across component updates, multiple Apps, and
+  Custom Element reconnects.
+- App plugins may return synchronous disposers. `app.unmount()` runs them in LIFO order after root
+  teardown and isolates cleanup errors.
+- Form-associated Runtime now bridges native reset, disabled, and state-restore callbacks, with
+  real Chromium host-matrix coverage.
+
 ## v0.1.0-beta.12 — 2026-07-28
 
 ### Compile-time fragments
