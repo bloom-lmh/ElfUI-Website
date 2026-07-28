@@ -21,17 +21,19 @@ defineStyle(`:host { display: block; }`);
 
 ### 局部模板片段
 
-`defineFragment()` 用于当前文件内命名的模板切片，变量名就是模板中的局部标签，标签属性会组成只读 props 对象：
+`defineFragment()` 用于当前文件内命名的模板切片，变量名就是模板中的局部标签；回调的每个
+展开参数按名称对应同名标签属性：
 
 ```ts
 import { defineFragment, defineHtml, fragment } from "@elfui/core";
 
-interface CardProps {
-  item: { label: string; value: number };
+interface CardItem {
+  label: string;
+  value: number;
 }
 
-const Card = defineFragment<CardProps>(
-  ({ item }) => `
+const Card = defineFragment(
+  (item: CardItem) => `
     <article class="card">
       <span>${item.label}</span>
       <strong>${item.value}</strong>

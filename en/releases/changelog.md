@@ -11,6 +11,14 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.16 — 2026-07-28
+
+- `defineFragment()` now uses expanded named callback parameters. Each parameter maps to the
+  same-named fragment attribute, its TypeScript annotation becomes the generated prop type, and
+  default parameters become optional props.
+- The legacy `defineFragment<Props>((props) => ...)` form, destructured parameters, and rest
+  parameters are rejected with compiler diagnostics.
+
 ## v0.1.0-beta.14 — 2026-07-28
 
 - Fixed lifecycle ordering where a parent `onMounted()` could run before a child Custom Element

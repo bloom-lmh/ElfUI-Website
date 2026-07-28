@@ -7,7 +7,7 @@ title: Local Template Fragments
 ElfUI beta.12 provides two compile-time template fragments that are private to the current file:
 
 - `fragment\`...\``is an anonymous one-off slice for direct interpolation or array`map()`.
-- `defineFragment<Props>()` is a named, typed local slice for splitting a larger component template.
+- `defineFragment()` is a named local slice whose expanded callback parameters describe its props.
 
 Neither API registers a Custom Element, creates a Shadow Root, or owns an independent component lifecycle. The compiler transparently expands the fragment into its owning `defineHtml()` component.
 
@@ -92,13 +92,8 @@ interface SummaryItem {
   value: number;
 }
 
-interface SummaryCardProps {
-  item: SummaryItem;
-  compact?: boolean;
-}
-
-const SummaryCard = defineFragment<SummaryCardProps>(
-  ({ item, compact = false }) => `
+const SummaryCard = defineFragment(
+  (item: SummaryItem, compact = false) => `
     <article class="summary-card" :class=${compact ? "is-compact" : ""}>
       <span>${item.label}</span>
       <strong>${item.value}</strong>
@@ -118,7 +113,10 @@ export const Dashboard = defineHtml(`
 `);
 ```
 
-The variable name becomes the local template tag, and tag attributes form a readonly props view.
+The variable name becomes the local template tag. Each expanded callback parameter maps to the
+same-named attribute (`:item` and `:compact` above), and its TypeScript annotation becomes the
+generated prop type. A default parameter makes that prop optional; passing `undefined` also
+uses the default, matching JavaScript parameter semantics. Tag attributes form a readonly props view.
 `:prop` and `v-bind` read outer reactive state lazily: updating a parent Ref or replacing the bound
 object updates only the affected DOM bindings without recreating the Fragment nodes. Prefer a
 PascalCase name so fragments remain visually distinct from native HTML elements.
@@ -137,6 +135,8 @@ Use `defineHtml()` when you need cross-file reuse, an independent lifecycle, Sha
 ## Static restrictions
 
 - Assign `defineFragment()` to a local `const`.
+- Use one simple named parameter per fragment prop. Destructuring, rest parameters, and the
+  legacy `defineFragment<Props>(...)` generic form are rejected by the compiler.
 - Do not reuse a name owned by another local component or fragment.
 - The render function must directly return a statically analyzable template literal.
 - Runtime-generated and cross-file fragments are unsupported.

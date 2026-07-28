@@ -22,18 +22,19 @@ defineStyle(`:host { display: block; }`);
 ### Local fragments
 
 Use `defineFragment()` for a named template slice that is private to the current file. The
-variable name is the local template tag, and attributes become the render function's readonly
-props object:
+variable name is the local template tag, and each expanded render parameter maps to a same-named
+attribute:
 
 ```ts
 import { defineFragment, defineHtml, fragment } from "@elfui/core";
 
-interface CardProps {
-  item: { label: string; value: number };
+interface CardItem {
+  label: string;
+  value: number;
 }
 
-const Card = defineFragment<CardProps>(
-  ({ item }) => `
+const Card = defineFragment(
+  (item: CardItem) => `
     <article class="card">
       <span>${item.label}</span>
       <strong>${item.value}</strong>
