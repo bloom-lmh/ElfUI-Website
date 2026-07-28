@@ -11,6 +11,26 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.14 — 2026-07-28
+
+- Fixed lifecycle ordering where a parent `onMounted()` could run before a child Custom Element
+  completed setup. Parent mounted hooks can now reliably call child `defineExpose()` APIs through
+  `useTemplateRef()`.
+- Added the `overrideNative` option to `defineExpose()`. Components can explicitly enhance native
+  semantics such as `focus()` and `blur()`; ordinary commands such as `scrollTo()` and `remove()`
+  should still use component-specific names.
+- Fixed Teleport subtrees losing Provider and App injection context. Their logical component
+  parent, nearest-Provider precedence, and DevTools ownership now remain stable after moving to
+  `body`.
+- App or component teardown now removes teleported nodes and stops their detached effect scopes.
+- Compiler and Runtime add development-only template-node source markers for components, named
+  Fragments, and source ranges, enabling precise ElfUI DevTools inspection. Production builds
+  remove all marker code.
+- Debug markers use a compact codegen protocol. The 100-component production fixture is about
+  200.5 KB min / 2.47 KB gzip / 1.09 KB Brotli, with a separate development-size guard.
+- All seven framework packages are released as `0.1.0-beta.14`; Core and Vite Plugin must use the
+  exact same version.
+
 ## v0.1.0-beta.13 — 2026-07-28
 
 - Core, Compiler, and Vite Plugin now expose an independent compiler protocol and perform an exact

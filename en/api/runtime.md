@@ -26,6 +26,9 @@ Application directives belong to `app.directive()`; macro-component-local direct
 
 `useHost`、`useShadowRoot`、`useRenderRoot`、`useAttrs`、`useAppConfig`、`useHostAttr`、`useHostFlag`、`useHostClass`、`useHostCssVar`、`useHostStyle`、`useTemplateRef`、`defineExpose`
 
+`defineExpose(exposed, options)` accepts `true` or a member-name array in `options.overrideNative`
+to declare intentional overrides of native host members.
+
 ## Built-in helpers
 
 `teleport`、`transition`、`transitionGroup`、`keepAlive`、`suspense`、`dynamicComponent`、`projectLightDom`

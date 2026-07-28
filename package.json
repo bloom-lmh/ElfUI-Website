@@ -12,11 +12,11 @@
     "beautify:vitepress": "node scripts/beautify-vitepress.mjs"
   },
   "dependencies": {
-    "@elfui/core": "0.1.0-beta.13",
+    "@elfui/core": "0.1.0-beta.14",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@elfui/vite-plugin": "0.1.0-beta.13",
+    "@elfui/vite-plugin": "0.1.0-beta.14",
     "vitepress": "^1.6.4",
     "vue": "^3"
   },

@@ -30,6 +30,16 @@ import { themeKey } from "./keys";
 const theme = inject(themeKey, "light");
 ```
 
+Injection follows the logical component parent chain. It crosses open or closed Shadow Roots and
+keeps the original Provider and App context after Teleport moves content to `body`. The nearest
+nested Provider wins, and a Custom Element inserted later reads the value visible when it connects.
+Provide a Ref or another reactive object for dynamic values:
+
+```ts
+const theme = useRef<"light" | "dark">("light");
+provide(themeKey, theme);
+```
+
 ::: warning
 Provide / Inject is suitable for hierarchical contexts such as forms, themes, and menus, and is not suitable for replacing ordinary props.
 :::
@@ -45,6 +55,10 @@ When a parent component must call a child component method, the child component 
 ::: warning
 This type of communication is an imperative API, suitable for `focus()`, `validate()`, `reset()`, and not suitable for ordinary data flows.
 :::
+
+When exposing an existing HTMLElement member such as `focus()` or `blur()`, the child component
+must declare the intentional override with
+`defineExpose(api, { overrideNative: ["focus"] })`.
 
 ```ts{6}
 type SearchInputHost = HTMLElement & {

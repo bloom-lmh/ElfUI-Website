@@ -20,6 +20,19 @@
 
 Content remains at the current location when disabled.
 
+## Component context and teardown
+
+Teleport changes physical DOM placement without changing the logical component tree:
+
+- Descendants continue to read the nearest original `provide()` and the current App's
+  `app.provide()` values.
+- The nearest nested Provider still wins.
+- DevTools preserves the original component parent relationship.
+- Unmounting the owner component or App removes the teleported nodes and stops their detached
+  effect scope.
+
+Provide a Ref or another reactive object when an injected value must update dynamically.
+
 ## Usage suggestions
 
 Elastic layer components usually need to be matched with `useScrollLock()`, `useEscapeKey()`, `useFocusTrap()` and `useClickOutside()`.

@@ -7,12 +7,15 @@ import { defineExpose, defineHtml, useTemplateRef } from "@elfui/core";
 
 const input = useTemplateRef<HTMLInputElement>("input");
 
-defineExpose({
-  focus: () => input.value?.focus(),
-  clear: () => {
-    if (input.value) input.value.value = "";
-  }
-});
+defineExpose(
+  {
+    focus: () => input.value?.focus(),
+    clear: () => {
+      if (input.value) input.value.value = "";
+    }
+  },
+  { overrideNative: ["focus"] }
+);
 
 export const SearchInput = defineHtml(` <input ref="input" /> `);
 ```
@@ -25,8 +28,23 @@ interface SearchInputExpose {
   clear(): void;
 }
 
-defineExpose<SearchInputExpose>({ focus, clear });
+defineExpose<SearchInputExpose>({ focus, clear }, { overrideNative: ["focus"] });
 ```
+
+## Collisions with native HTMLElement members
+
+ElfUI warns in development when an exposed name already exists on the component host. Use
+`overrideNative` only when the component intentionally enhances native semantics:
+
+```ts
+defineExpose(
+  { focus, blur },
+  { overrideNative: ["focus", "blur"] }
+);
+```
+
+Names such as `scrollTo()`, `remove()`, and `click()` should generally not be replaced. Prefer
+component-specific names such as `scrollToOption()`, `removeItem()`, or `triggerAction()`.
 
 External use:
 
@@ -34,7 +52,7 @@ External use:
 const el = document.querySelector("search-input") as HTMLElement & {
   focus(): void;
 };
-// 外部可以调用暴露的方法
+// The exposed method is available on the host.
 el.focus();
 ```
 

@@ -18,9 +18,19 @@ export const SearchInput = defineHtml(`
 ## Works with component exposure
 
 ```ts
-defineExpose({
-  focus,
+defineExpose({ focus }, { overrideNative: ["focus"] });
+```
+
+The parent component or an external page can call `focus()` after obtaining the component host. A
+parent `onMounted()` runs after synchronous children complete setup, expose, and mounted, so this is
+a stable point for calling a child public method:
+
+```ts
+const search = useTemplateRef<HTMLElement & { focus(): void }>("search");
+
+onMounted(() => {
+  search.value?.focus();
 });
 ```
 
-The parent component or external page can call `focus()` after getting the component host. See "Components/Component Exposure" for details.
+See "Components / Component Exposure" for details.

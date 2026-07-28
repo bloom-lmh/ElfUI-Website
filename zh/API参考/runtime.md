@@ -26,6 +26,8 @@ title: runtime API
 
 `useHost`、`useShadowRoot`、`useRenderRoot`、`useAttrs`、`useAppConfig`、`useHostAttr`、`useHostFlag`、`useHostClass`、`useHostCssVar`、`useHostStyle`、`useTemplateRef`、`defineExpose`
 
+`defineExpose(exposed, options)` 的 `options.overrideNative` 接受 `true` 或成员名数组，用于显式声明有意覆盖的 host 原生成员。
+
 ## 内置 helper
 
 `teleport`、`transition`、`transitionGroup`、`keepAlive`、`suspense`、`dynamicComponent`、`projectLightDom`
