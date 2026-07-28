@@ -1,6 +1,7 @@
 ---
 title: Defining Components
 ---
+
 # Define components
 
 A macro component file usually contains three parts: import API, top-level setup logic, and export component.
@@ -39,11 +40,11 @@ app.mount("#app");
 
 Named exports will infer tags from the export name:
 
-| export name | inferred tag |
-| ----------- | -------------------- |
-| `UserCard`  | `elf-user-card`      |
-| `ElfButton` | `elf-button`         |
-| `default` | Inferred by file name or directory name |
+| export name | inferred tag                            |
+| ----------- | --------------------------------------- |
+| `UserCard`  | `elf-user-card`                         |
+| `ElfButton` | `elf-button`                            |
+| `default`   | Inferred by file name or directory name |
 
 If you need to unify the project prefix, please configure `tagPrefix` in `@elfui/vite-plugin`. The macro component tag is a compile-time result and is not affected by `configure()` at runtime.
 
@@ -64,3 +65,10 @@ export const Field = defineHtml(`<slot></slot>`);
 ```
 
 `register: false` is suitable for exporting the constructor inside the component library, and then unifying `registerComponents()` by the entrance.
+
+## Component or local fragment?
+
+Use `defineHtml()` when the unit needs cross-file reuse, its own Shadow Root, lifecycle, slots, or a
+public component API. If you only want to divide a large template inside one file, use
+`defineFragment()` instead. It creates a typed local template slice without another component
+boundary. See [Local Template Fragments](/en/template-syntax/local-template-fragments).
