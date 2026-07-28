@@ -11,6 +11,25 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.12 — 2026-07-28
+
+### Compile-time fragments
+
+- Added the `fragment\`...\`` anonymous template slice API.
+- Added the `const Card = defineFragment<Props>((props) => \`...\`)` local named slice API.
+- Fragment tags are transparent compile-time expansions: they do not register Custom Elements,
+  create Shadow Roots, or own independent lifecycle scopes.
+- Named fragment attributes are compiled into a readonly props object. Exported fragments,
+  dynamic fragment templates, and unsupported fragment boundaries produce compiler diagnostics.
+- The Vite macro plugin recognizes the new macro imports and keeps Core/compiler versions aligned.
+
+### Release alignment
+
+- All seven framework packages are published as `0.1.0-beta.12` and must be consumed at the same
+  version.
+- `@elfui/router` keeps its compatible peer range `>=0.1.0-beta.11 <0.2.0`; fragments do not change
+  the runtime/router protocol.
+
 ## v0.1.0-beta.9 — 2026-07-22
 
 - Fixed macro codegen so `RenderContext.directives` reaches `resolveDirective()` in both root templates and derived `v-for` contexts.
@@ -54,7 +73,7 @@ Migrate `watchEffect(fn)` to `useEffect(fn, { flush: "pre" })` to preserve its f
 ### Less repetitive macro syntax
 
 - Added `defineHtml(\`...\`)`; `${...}` holes continue to compile as reactive expressions.
-- Added `defineStyle(\`...\`)` and `defineStyle(styleA, styleB)` for combining imported styles.
+- Added `defineStyle(\`...\`)`and`defineStyle(styleA, styleB)` for combining imported styles.
 - Removed the public exports, source implementations, and legacy compiler branches for `html`, `css`, and `MacroHtmlTemplate`; this is a breaking beta.7 change.
 - Removed obsolete compiler-diagnostic paths for `useName`, `useProps`, `useEmit`, and `useStyle`, and cleaned stale `useState` examples from source comments.
 - Arbitrary runtime-generated HTML strings remain unsupported, so this change adds no runtime template compiler.
