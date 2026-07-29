@@ -8,7 +8,7 @@ title: "@elfui/core API"
 
 ## 宏组件
 
-`defineHtml`、`defineProps`、`defineEmits`、`defineModel`、`defineSlots`、`defineStyle`、`defineOptions`、`defineDirective`、`defineFragment`、`fragment`、`defineName`、`useComponents`
+`defineHtml`、`defineProps`、`defineEmits`、`defineModel`、`defineSlots`、`defineStyle`、`defineOptions`、`defineDirective`、`defineName`、`useComponents`
 
 推荐直接把内联模板字符串传给宏：
 
@@ -18,38 +18,6 @@ defineStyle(`:host { display: block; }`);
 ```
 
 `defineStyle(styleA, styleB)` 可以组合多个导入的 CSS 字符串。beta.7 已删除 `html`、`css` 及 `MacroHtmlTemplate`；内联模板必须直接传入。`defineHtml()` 不接受运行时生成的任意字符串，模板必须能被编译器静态分析。
-
-### 局部模板片段
-
-`defineFragment()` 用于当前文件内命名的模板切片，变量名就是模板中的局部标签；回调的每个
-展开参数按名称对应同名标签属性：
-
-```ts
-import { defineFragment, defineHtml, fragment } from "@elfui/core";
-
-interface CardItem {
-  label: string;
-  value: number;
-}
-
-const Card = defineFragment(
-  (item: CardItem) => `
-    <article class="card">
-      <span>${item.label}</span>
-      <strong>${item.value}</strong>
-    </article>
-  `,
-);
-
-export const Dashboard = defineHtml(`
-  <section>
-    <Card v-for="item in items" :key="item.label" :item="item" />
-    ${fragment`<footer>Summary</footer>`}
-  </section>
-`);
-```
-
-`fragment\`...\``是一次性匿名片段。两种片段都会在编译期透明展开，不注册 Custom Element、不创建 Shadow Root，也不拥有独立生命周期。需要公开、跨文件或拥有独立生命周期的模板时，继续使用`defineHtml()`。写法选择以及它与 `v-for` 的关系参见[局部模板片段](/zh/模板语法/局部模板片段)。
 
 ## 响应式
 

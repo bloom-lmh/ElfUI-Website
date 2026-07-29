@@ -84,7 +84,7 @@ beta.13 起，插件会在 Vite 启动阶段检查 Core、Compiler 与 Vite Plug
 ```ts
 elfuiMacroPlugin({
   onMetadata(metadata, id) {
-    // Metadata v2：组件、Fragment、源码范围和归属
+    // Metadata v2：组件、源码范围和归属
   },
   onDiagnostics(diagnostics, id) {
     // 同一文件每次 transform 都会回调，空数组表示清除旧诊断

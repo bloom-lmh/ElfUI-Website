@@ -8,7 +8,7 @@ title: "@elfui/core API"
 
 ## macro component
 
-`defineHtml`, `defineProps`, `defineEmits`, `defineModel`, `defineSlots`, `defineStyle`, `defineOptions`, `defineDirective`, `defineFragment`, `fragment`, `defineName`, `useComponents`
+`defineHtml`, `defineProps`, `defineEmits`, `defineModel`, `defineSlots`, `defineStyle`, `defineOptions`, `defineDirective`, `defineName`, `useComponents`
 
 Pass inline template literals directly to the macros:
 
@@ -18,43 +18,6 @@ defineStyle(`:host { display: block; }`);
 ```
 
 `defineStyle(styleA, styleB)` combines multiple imported CSS strings. Beta.7 removes `html`, `css`, and `MacroHtmlTemplate`; pass inline templates directly. `defineHtml()` does not accept arbitrary runtime-generated strings because its template must be statically analyzable by the compiler.
-
-### Local fragments
-
-Use `defineFragment()` for a named template slice that is private to the current file. The
-variable name is the local template tag, and each expanded render parameter maps to a same-named
-attribute:
-
-```ts
-import { defineFragment, defineHtml, fragment } from "@elfui/core";
-
-interface CardItem {
-  label: string;
-  value: number;
-}
-
-const Card = defineFragment(
-  (item: CardItem) => `
-    <article class="card">
-      <span>${item.label}</span>
-      <strong>${item.value}</strong>
-    </article>
-  `,
-);
-
-export const Dashboard = defineHtml(`
-  <section>
-    <Card v-for="item in items" :key="item.label" :item="item" />
-    ${fragment`<footer>Summary</footer>`}
-  </section>
-`);
-```
-
-`fragment\`...\``is the anonymous form for one-off inline markup. Both forms are compile-time
-transparent fragments: they do not register a Custom Element, create a Shadow Root, or own
-independent lifecycle hooks. Keep using`defineHtml()`for a public or cross-file component. For
-authoring guidance and its relationship with`v-for`, see
-[Local Template Fragments](/en/template-syntax/local-template-fragments).
 
 ## Responsive
 

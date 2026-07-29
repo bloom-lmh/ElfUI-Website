@@ -26,10 +26,6 @@ Conditions and lists belong to control flow, and instructions are used to make t
 List recommendations always provide stable `key`. ElfUI will use keyed list updates to insert, delete, and rearrange only necessary nodes.
 :::
 
-For a TypeScript `array.map()` authoring style or multiple sibling nodes per item, see
-[Local Template Fragments](/en/template-syntax/local-template-fragments). Anonymous fragment lists
-use index identity in beta.12, so keep `v-for` for reorderable keyed lists.
-
 ## template group
 
 ```html

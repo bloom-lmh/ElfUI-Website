@@ -85,7 +85,7 @@ Tooling can consume the unified build-only data without adding it to browser pro
 ```ts
 elfuiMacroPlugin({
   onMetadata(metadata, id) {
-    // Metadata v2: components, Fragments, source ranges, and ownership
+    // Metadata v2: components, source ranges, and ownership
   },
   onDiagnostics(diagnostics, id) {
     // Called on every transform; an empty array clears stale diagnostics

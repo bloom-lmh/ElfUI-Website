@@ -53,10 +53,6 @@ const englishSidebar: Sidebar = [
     ["Overview", "/en/template-syntax/overview"],
     ["Text and Attributes", "/en/template-syntax/text-and-attributes"],
     ["Conditions and Lists", "/en/template-syntax/conditions-and-lists"],
-    [
-      "Local Template Fragments",
-      "/en/template-syntax/local-template-fragments",
-    ],
     ["Event Binding", "/en/template-syntax/event-binding"],
     ["Form Binding", "/en/template-syntax/form-binding"],
     ["Class and Style", "/en/template-syntax/class-and-style"],
@@ -175,7 +171,6 @@ const zhSidebar: Sidebar = [
     ["概览", "/zh/模板语法/概览"],
     ["文本与属性", "/zh/模板语法/文本与属性"],
     ["条件与列表", "/zh/模板语法/条件与列表"],
-    ["局部模板片段", "/zh/模板语法/局部模板片段"],
     ["事件绑定", "/zh/模板语法/事件绑定"],
     ["表单绑定", "/zh/模板语法/表单绑定"],
     ["class 与 style", "/zh/模板语法/class与style"],

@@ -16,8 +16,6 @@ export const localePathMap = {
   "/zh/模板语法/文本与属性": "/en/template-syntax/text-and-attributes",
   "/en/template-syntax/conditions-and-lists": "/zh/模板语法/条件与列表",
   "/zh/模板语法/条件与列表": "/en/template-syntax/conditions-and-lists",
-  "/en/template-syntax/local-template-fragments": "/zh/模板语法/局部模板片段",
-  "/zh/模板语法/局部模板片段": "/en/template-syntax/local-template-fragments",
   "/en/template-syntax/event-binding": "/zh/模板语法/事件绑定",
   "/zh/模板语法/事件绑定": "/en/template-syntax/event-binding",
   "/en/template-syntax/form-binding": "/zh/模板语法/表单绑定",
