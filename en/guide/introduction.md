@@ -27,7 +27,7 @@ ElfUI is suitable for these types of scenarios:
 | Component library | Output standard Custom Element, reused across frameworks |
 | Standalone Vite application | Macro component pre-compiled without runtime compiler |
 | Progressive transformation | You can register components as native tags and put them into old pages |
-| Size-sensitive project | Current tree-shaken application fixture: 10.04 KB gzip, without the compiler |
+| Size-sensitive project | Current tree-shaken application fixture: 10.13 KB gzip, without the compiler |
 
 ## Relationship with Vue/Lit/Solid
 

@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       '@elfui/core':
-        specifier: 0.1.0-beta.19
-        version: 0.1.0-beta.19
+        specifier: 0.1.0-beta.20
+        version: 0.1.0-beta.20
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
     devDependencies:
       '@elfui/vite-plugin':
-        specifier: 0.1.0-beta.19
-        version: 0.1.0-beta.19
+        specifier: 0.1.0-beta.20
+        version: 0.1.0-beta.20
       vitepress:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.55.2)(postcss@8.5.17)(search-insights@2.17.3)(typescript@5.9.3)
@@ -143,26 +143,26 @@ packages:
       search-insights:
         optional: true
 
-  '@elfui/compiler-template@0.1.0-beta.19':
-    resolution: {integrity: sha512-bLS3r7/cZU13diDGelyNdm8ajePeB55RqZAUUAa8x5xuqnWCmaF2TtMQU4zoo6DvEcnvbSt89APlBpcpf4VWdw==}
+  '@elfui/compiler-template@0.1.0-beta.20':
+    resolution: {integrity: sha512-mW29MPvyYSVbCm5GAWhN44j7TJVOQX00ixCQB5Po6B1UySmnzeZWr1/8k7F6nhj0BGFY5Ld1SqCe3242wL8VkA==}
 
-  '@elfui/compiler@0.1.0-beta.19':
-    resolution: {integrity: sha512-ZTsCA7uz/M292c6iGMHpj20FolujGgYq7l1eEpEkMz75vW20bEeD1gXf0ETCD+0mF2oXpyxgp9PViX2KyuylFw==}
+  '@elfui/compiler@0.1.0-beta.20':
+    resolution: {integrity: sha512-W1Zp1EkwsUqUnadU7zOddKYocSPJ88AO/auTy0L1USLbYk64ljai0Rl16ewQCxWR1ohlYJRTQ/3zZQU7kNNasw==}
 
-  '@elfui/core@0.1.0-beta.19':
-    resolution: {integrity: sha512-wKDI+iX1WDxYAfRclaWh/he08cBiQytVTDehlkFh0QmusfKWNnAZDiaXtzDkhoVzYhQPs/ey4CvTyIsOTGgzRQ==}
+  '@elfui/core@0.1.0-beta.20':
+    resolution: {integrity: sha512-w+otxJc0jGebbQhRlgWVi+a/hhYuC7lwn7/Xdg5pK3HcC7xpx3krjMXkF11IYXx7Fe72qDG8U1im7/hb85qkfA==}
 
-  '@elfui/reactivity@0.1.0-beta.19':
-    resolution: {integrity: sha512-SFtoNFtuL31jVT5LBMv7rjDWB5EvfTckLFkp6wPpWgFpo7fm4+UoDViL9a/Lstt4LgjX+BD2IUZJjxgEVbzr8w==}
+  '@elfui/reactivity@0.1.0-beta.20':
+    resolution: {integrity: sha512-nvVBKT3kouVY7KIWvFTU+HySTicS8mqf701M+y1DfCA6liIml5hDqBs+YJpyF3UucRChsdHZz0bUkJKOfqzJBQ==}
 
-  '@elfui/runtime@0.1.0-beta.19':
-    resolution: {integrity: sha512-TSbtpnvcIob8xSXDRQr7xOx4D+OuVWUla+mDifYpIuHYrpF4M273OWYeQi6Ps6LtsDMkolfDcAWRwqrUZsw0OA==}
+  '@elfui/runtime@0.1.0-beta.20':
+    resolution: {integrity: sha512-w1aJulS0zipvmel4+NEZYpwdpKpYtibNX6x36IA99UkuORcjDyoNSeCJSfpHNFTYqE7hNEVkyCPgvjs/2IP3dw==}
 
-  '@elfui/shared@0.1.0-beta.19':
-    resolution: {integrity: sha512-UwH681QU7ORUvAbFQFjjn7eygCXPU/qvx2rYRtQsGmg7JO7pMek1adYdudhvF798uZHi5n3DEoRSMa3zoxuC6A==}
+  '@elfui/shared@0.1.0-beta.20':
+    resolution: {integrity: sha512-dtnhyIy5JPq7vmhvv2Zmrw4YuIMLO8OT3diIXlP/m9wg6jWJ2mJWfKlaIyJlubckVC91YlmQ7JoCLqFweM26PQ==}
 
-  '@elfui/vite-plugin@0.1.0-beta.19':
-    resolution: {integrity: sha512-fyn/30zljlUmZIwcRpMFJyqclFSySPiy2VMKYs0w4BwkYgW9PP+aCkKv4Szg60EzyRJ3TMaYLBgOjffT+vY1cg==}
+  '@elfui/vite-plugin@0.1.0-beta.20':
+    resolution: {integrity: sha512-76KKjDOkPV2KnDnOCF+y2lSRHETYQu0RelhCnTs0cQ7mXNfy7ocP1zRiWY+yKWscZR2Jv21cjvl2MmakTpbzDw==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -992,33 +992,33 @@ snapshots:
     transitivePeerDependencies:
       - '@algolia/client-search'
 
-  '@elfui/compiler-template@0.1.0-beta.19': {}
+  '@elfui/compiler-template@0.1.0-beta.20': {}
 
-  '@elfui/compiler@0.1.0-beta.19':
+  '@elfui/compiler@0.1.0-beta.20':
     dependencies:
-      '@elfui/compiler-template': 0.1.0-beta.19
-      '@elfui/reactivity': 0.1.0-beta.19
-      '@elfui/runtime': 0.1.0-beta.19
+      '@elfui/compiler-template': 0.1.0-beta.20
+      '@elfui/reactivity': 0.1.0-beta.20
+      '@elfui/runtime': 0.1.0-beta.20
       typescript: 5.9.3
 
-  '@elfui/core@0.1.0-beta.19':
+  '@elfui/core@0.1.0-beta.20':
     dependencies:
-      '@elfui/reactivity': 0.1.0-beta.19
-      '@elfui/runtime': 0.1.0-beta.19
+      '@elfui/reactivity': 0.1.0-beta.20
+      '@elfui/runtime': 0.1.0-beta.20
 
-  '@elfui/reactivity@0.1.0-beta.19':
+  '@elfui/reactivity@0.1.0-beta.20':
     dependencies:
-      '@elfui/shared': 0.1.0-beta.19
+      '@elfui/shared': 0.1.0-beta.20
 
-  '@elfui/runtime@0.1.0-beta.19':
+  '@elfui/runtime@0.1.0-beta.20':
     dependencies:
-      '@elfui/reactivity': 0.1.0-beta.19
+      '@elfui/reactivity': 0.1.0-beta.20
 
-  '@elfui/shared@0.1.0-beta.19': {}
+  '@elfui/shared@0.1.0-beta.20': {}
 
-  '@elfui/vite-plugin@0.1.0-beta.19':
+  '@elfui/vite-plugin@0.1.0-beta.20':
     dependencies:
-      '@elfui/compiler': 0.1.0-beta.19
+      '@elfui/compiler': 0.1.0-beta.20
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true

@@ -6,9 +6,9 @@ The macro component mainline compiles the template during the build period, and 
 import { defineHtml } from "@elfui/core";
 ```
 
-The main `@elfui/core` entry does not include the runtime compiler. The repository's current real tree-shaken application fixture is 10.04 KB gzip / 9.07 KB Brotli; the exact output depends on the imported APIs and bundler.
+The main `@elfui/core` entry does not include the runtime compiler. The repository's current real tree-shaken application fixture is 10.13 KB gzip / 9.16 KB Brotli; the exact output depends on the imported APIs and bundler.
 
-Release checks enforce four automated gzip/Brotli budgets: a real application, the complete Core facade, runtime, and reactivity. Their current result/budget pairs are 10.04/10.2 KB gzip and 9.07/9.2 KB Brotli for the real application; 17.57/17.8 KB and 15.86/16.1 KB for the complete Core facade; 15.25/15.5 KB and 13.83/14.1 KB for Runtime; and 5.17/5.5 KB and 4.71/5.0 KB for Reactivity. The aggregate facades intentionally include every stable export to track the total public surface; they are not typical application download sizes. The build also verifies that production bundles remove DEV branches and that published ESM does not write a global `__DEV__` flag.
+Release checks enforce four automated gzip/Brotli budgets: a real application, the complete Core facade, runtime, and reactivity. Their current result/budget pairs are 10.13/10.3 KB gzip and 9.16/9.3 KB Brotli for the real application; 18.47/18.8 KB and 16.66/17.0 KB for the complete Core facade; 16.14/16.4 KB and 14.64/14.9 KB for Runtime; and 5.23/5.4 KB and 4.77/4.9 KB for Reactivity. The aggregate facades intentionally include every stable export to track the total public surface; they are not typical application download sizes. The build also verifies that production bundles remove DEV branches and that published ESM does not write a global `__DEV__` flag.
 
 ## Chain boundaries
 

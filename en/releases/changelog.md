@@ -11,6 +11,24 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.20 — 2026-07-29
+
+- Transition and TransitionGroup now wait for CSS transitions/animations based on computed styles,
+  with timeout and cancellation cleanup, so missing `transitionend`/`animationend` events cannot
+  leave an operation stuck.
+- TransitionGroup uses a zero-move fast path for unchanged key order and LIS-based minimal moves for
+  reordered lists, reducing DOM work on large collections.
+- Production DevTools paths no longer allocate debug payloads. Custom Element prop storage is lazy,
+  and prop accessors are shared on the prototype.
+- The Vite macro transform parses each candidate module's TypeScript AST once, reducing compilation
+  work in large projects.
+- Release gates now include schema v2 public API signature snapshots, `publint`, published-type
+  surface checks, and 100/1,000-file compilation benchmarks.
+- Removed Metadata v1 adapters/types and the ineffective runtime `TransitionGroupOptions.tag`.
+  Template `<TransitionGroup tag="ul">` remains supported and requires no migration.
+- Current measured sizes are 10.13 KB gzip / 9.16 KB Brotli for the real application, 18.47 / 16.66
+  KB for Core, 16.14 / 14.64 KB for Runtime, and 5.23 / 4.77 KB for Reactivity.
+
 ## v0.1.0-beta.19 — 2026-07-29
 
 - Fixed InjectionKey collisions and deferred child components that could not mount after

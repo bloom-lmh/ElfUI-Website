@@ -34,10 +34,10 @@ Current beta size baseline. The real-application fixture represents a tree-shake
 
 | Target | gzip | Brotli | Description |
 | --- | ---: | ---: | --- |
-| Real application fixture | 10.04 KB | 9.07 KB | Tree-shaken consumer of the public Core API |
-| `@elfui/core` aggregate facade | 17.57 KB | 15.86 KB | Every stable Core export; not a typical application bundle |
-| `@elfui/runtime` aggregate facade | 15.25 KB | 13.83 KB | Every stable Runtime export, without the compiler |
-| `@elfui/reactivity` aggregate facade | 5.17 KB | 4.71 KB | Complete standalone reactivity entry |
+| Real application fixture | 10.13 KB | 9.16 KB | Tree-shaken consumer of the public Core API |
+| `@elfui/core` aggregate facade | 18.47 KB | 16.66 KB | Every stable Core export; not a typical application bundle |
+| `@elfui/runtime` aggregate facade | 16.14 KB | 14.64 KB | Every stable Runtime export, without the compiler |
+| `@elfui/reactivity` aggregate facade | 5.23 KB | 4.77 KB | Complete standalone reactivity entry |
 
 ## boundary
 
