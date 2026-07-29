@@ -11,7 +11,7 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
-## Next beta
+## v0.1.0-beta.17 — 2026-07-29
 
 - Removed the `fragment` and `defineFragment()` APIs, their compiler metadata, and their runtime
   helpers. Keep local markup directly inside `defineHtml()` and use keyed `v-for` for lists.
