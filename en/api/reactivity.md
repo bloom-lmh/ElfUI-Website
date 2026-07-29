@@ -19,7 +19,11 @@ Use `useEffect()` for automatically tracked effects and `watch()` for explicit s
 
 ### Scheduling
 
-`nextTick`、`queueJob`、`queuePostFlushJob`、`flushSync`
+`batch`、`nextTick`、`queueJob`、`queuePostFlushJob`、`flushSync`
+
+`batch(() => { ... })` groups multiple reactive writes into one downstream effect flush and returns the callback result. Nested batches flush only when the outermost batch completes; computed values are invalidated immediately, so reads inside the transaction are current. `flushSync()` is the explicit escape hatch when work must be flushed before the batch ends.
+
+Template event handlers are automatically wrapped in a batch. Use `batch()` directly for equivalent transactions in services, adapters, or imperative code.
 
 ### tool
 

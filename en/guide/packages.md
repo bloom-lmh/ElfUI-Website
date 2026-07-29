@@ -30,14 +30,14 @@ ElfUI uses a single user-facing entry while keeping its internal packages separa
 
 ## Volume caliber
 
-Current beta volume baseline:
+Current beta size baseline. The real-application fixture represents a tree-shaken public API consumer; aggregate facades deliberately retain every stable export for release monitoring.
 
-| Entry | gzip | Description |
-| ----------------------- | -------: | --------------------------------------- |
-| `@elfui/core` | 10.52 KB | Main entry, without runtime compiler |
-| `@elfui/chain` | 21.19 KB | Chained `.template()` with runtime compiler |
-| `@elfui/core + @elfui/router` | 15.00 KB | Main entrance plus routing |
-| `@elfui/reactivity` | 4.17 KB | Reactive only |
+| Target | gzip | Brotli | Description |
+| --- | ---: | ---: | --- |
+| Real application fixture | 10.04 KB | 9.07 KB | Tree-shaken consumer of the public Core API |
+| `@elfui/core` aggregate facade | 17.57 KB | 15.86 KB | Every stable Core export; not a typical application bundle |
+| `@elfui/runtime` aggregate facade | 15.25 KB | 13.83 KB | Every stable Runtime export, without the compiler |
+| `@elfui/reactivity` aggregate facade | 5.17 KB | 4.71 KB | Complete standalone reactivity entry |
 
 ## boundary
 

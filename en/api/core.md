@@ -21,7 +21,9 @@ defineStyle(`:host { display: block; }`);
 
 ## Responsive
 
-`useRef`、`useReactive`、`useShallowRef`、`useShallowReactive`、`useComputed`、`useEffect`、`watch`、`onWatcherCleanup`、`nextTick`
+`useRef`、`useReactive`、`useShallowRef`、`useShallowReactive`、`useComputed`、`useEffect`、`watch`、`onWatcherCleanup`、`batch`、`nextTick`
+
+`batch()` groups multiple writes into one downstream effect flush. Template event handlers apply this batching automatically; use the API directly for imperative transactions.
 
 ## Lifecycle
 

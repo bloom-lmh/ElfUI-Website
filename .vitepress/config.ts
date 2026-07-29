@@ -30,9 +30,6 @@ const localAliases = useLocalPackages
 
 type Sidebar = DefaultTheme.SidebarItem[];
 
-const playgroundUrl =
-  "https://stackblitz.com/fork/github/bloom-lmh/elfui-playground?startScript=dev&title=ElfUI%20Playground";
-
 const section = (
   text: string,
   items: [string, string][],
@@ -325,12 +322,6 @@ const englishTheme: DefaultTheme.Config = {
   nav: [
     { text: "Home", link: "/en/" },
     { text: "API", link: "/en/api/core" },
-    {
-      text: "Playground",
-      link: playgroundUrl,
-      target: "_blank",
-      rel: "noreferrer",
-    },
   ],
   sidebar: englishSidebar,
   outline: { ...baseTheme.outline, label: "On this page" },
@@ -343,12 +334,6 @@ const chineseTheme: DefaultTheme.Config = {
   nav: [
     { text: "首页", link: "/zh/" },
     { text: "API", link: "/zh/API参考/elfui" },
-    {
-      text: "演练场",
-      link: playgroundUrl,
-      target: "_blank",
-      rel: "noreferrer",
-    },
   ],
   sidebar: zhSidebar,
   outline: { ...baseTheme.outline, label: "本页目录" },

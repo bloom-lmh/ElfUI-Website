@@ -11,6 +11,20 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.19 — 2026-07-29
+
+- Fixed InjectionKey collisions and deferred child components that could not mount after
+  reconnecting.
+- Teleport, Suspense, ErrorBoundary, Transition, and TransitionGroup now retain and release
+  multi-root DOM and reactive scopes correctly.
+- Offline dynamic-component code generation now preserves attributes, directives, events, and
+  children like the runtime compiler.
+- Stable-key list updates are batched; Vite skips TypeScript parsing for files without ElfUI macro
+  imports.
+- Removed unused package dependency edges and added a non-vacuous macro template typecheck fixture.
+- Updated aggregate size budgets after lifecycle hardening while keeping the real tree-shaken
+  application budget unchanged.
+
 ## v0.1.0-beta.18 — 2026-07-29
 
 - Fixed cached `useComputed()` values remaining stale when read immediately after a dependency

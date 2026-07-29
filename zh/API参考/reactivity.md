@@ -22,7 +22,11 @@ title: reactivity API
 
 ### 调度
 
-`nextTick`、`queueJob`、`queuePostFlushJob`、`flushSync`
+`batch`、`nextTick`、`queueJob`、`queuePostFlushJob`、`flushSync`
+
+`batch(() => { ... })` 会把多次响应式写入合并为一次下游 effect 刷新，并返回回调结果。嵌套 batch 只在最外层结束时刷新；computed 会立即失效，因此事务内读取仍是最新值。确实需要在 batch 结束前刷新时，使用 `flushSync()` 作为显式逃生口。
+
+模板事件处理器会自动包在 batch 中。服务、适配器或命令式代码需要同样的事务语义时，直接调用 `batch()`。
 
 ### 工具
 

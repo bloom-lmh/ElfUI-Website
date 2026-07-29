@@ -21,7 +21,9 @@ defineStyle(`:host { display: block; }`);
 
 ## 响应式
 
-`useRef`、`useReactive`、`useShallowRef`、`useShallowReactive`、`useComputed`、`useEffect`、`watch`、`onWatcherCleanup`、`nextTick`
+`useRef`、`useReactive`、`useShallowRef`、`useShallowReactive`、`useComputed`、`useEffect`、`watch`、`onWatcherCleanup`、`batch`、`nextTick`
+
+`batch()` 会把多次写入合并为一次下游 effect 刷新。模板事件处理器会自动应用 batch；命令式事务可直接调用该 API。
 
 ## 生命周期
 
