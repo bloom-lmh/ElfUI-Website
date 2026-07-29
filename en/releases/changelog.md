@@ -11,6 +11,14 @@ This page records user-visible changes in the synchronized ElfUI framework packa
 ElfUI is still in beta. Keep `@elfui/core` and `@elfui/vite-plugin` on the same exact version. When a
 release changes the compiler/runtime protocol, mixed versions are unsupported.
 
+## v0.1.0-beta.18 — 2026-07-29
+
+- Fixed cached `useComputed()` values remaining stale when read immediately after a dependency
+  write inside a batched template event. Computed caches now invalidate synchronously while
+  ordinary effects remain deferred until the transaction flushes.
+- Fixed concurrent `useScrollLock()` owners unlocking the page early. The original body overflow
+  is now restored only after the final owner releases or unmounts.
+
 ## v0.1.0-beta.17 — 2026-07-29
 
 - Removed the `fragment` and `defineFragment()` APIs, their compiler metadata, and their runtime
