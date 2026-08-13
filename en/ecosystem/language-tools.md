@@ -13,7 +13,7 @@ After the Marketplace is released, search for **ElfUI Language Tools** in the VS
 code --install-extension SWUST-WEBLAB-LMH.elfui-language-features
 ```
 
-Each version tag also comes with installable VSIX in [Language Tools Releases](https://github.com/bloom-lmh/elfui-language-tools/releases). Before listing on Marketplace, you can execute `pnpm package:vsix` in the warehouse to build local VSIX.
+Each version tag also comes with installable VSIX in [Language Tools Releases](https://github.com/bloom-lmh/ElfUI-Language-Tools/releases). Before listing on Marketplace, you can execute `pnpm package:vsix` in the warehouse to build local VSIX.
 
 ## what to offer
 

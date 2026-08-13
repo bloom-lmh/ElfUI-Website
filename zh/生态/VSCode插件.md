@@ -14,7 +14,7 @@ Marketplace 发布后，在 VS Code 扩展市场搜索 **ElfUI Language Tools**�
 code --install-extension SWUST-WEBLAB-LMH.elfui-language-features
 ```
 
-每个版本 tag 也会在 [Language Tools Releases](https://github.com/bloom-lmh/elfui-language-tools/releases) 附带可安装的 VSIX。Marketplace 上架前，可在仓库执行 `pnpm package:vsix` 构建本地 VSIX。
+每个版本 tag 也会在 [Language Tools Releases](https://github.com/bloom-lmh/ElfUI-Language-Tools/releases) 附带可安装的 VSIX。Marketplace 上架前，可在仓库执行 `pnpm package:vsix` 构建本地 VSIX。
 
 ## 提供什么
 
